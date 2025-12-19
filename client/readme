@@ -1,0 +1,293 @@
+Goal: Build a full-stack Progressive Web App (PWA) alumni platform for a school, with public school-focused content and a private alumni-only system with authentication, moderation, and job postings.
+
+🔷 TECH STACK
+
+Frontend: React (Vite) + React Router
+
+Backend: Node.js + Express
+
+Auth: JWT-based authentication
+
+Database: PostgreSQL (or MySQL)
+
+Storage: Cloudinary (for profile & post images)
+
+State: React Context for auth
+
+PWA: Service workers, installable app
+
+Styling: Clean, responsive UI (Tailwind or CSS)
+
+🔷 APP STRUCTURE
+
+The app must have two clear sections:
+
+Public (unauthenticated)
+
+Private (authenticated alumni)
+
+🟢 PUBLIC SECTION (NO LOGIN REQUIRED)
+Pages:
+
+Home / Landing Page
+
+School overview
+
+Vision & mission
+
+Achievements
+
+Alumni impact stories
+
+Blog/news preview
+
+CTA: Login / Join Alumni Network
+
+Blog / News
+
+Admin-created posts only
+
+Published posts visible to everyone
+
+Events (Public View)
+
+School & alumni events
+
+Public Navigation:
+Home | About School | Blog | Events | Login | Register
+
+🔐 AUTHENTICATION SYSTEM
+
+Register page:
+
+Full name
+
+Email
+
+Password (hashed)
+
+Graduation set/batch selection
+
+Login page
+
+JWT stored securely (localStorage)
+
+Protected routes using React context
+
+Auto-redirect unauthenticated users to login
+
+🔵 PRIVATE SECTION (LOGGED-IN USERS ONLY)
+Pages:
+
+Dashboard
+
+Welcome message
+
+Latest announcements
+
+Approved job opportunities
+
+Upcoming events
+
+Alumni Directory
+
+View alumni by set
+
+Search & filter by name, profession, country
+
+Profile
+
+Profile picture upload
+
+Bio
+
+Work info
+
+Contact info
+
+Edit profile
+
+Jobs & Opportunities
+
+View approved jobs
+
+Submit job opportunities
+
+🕒 WEEKEND-ONLY JOB SUBMISSION RULE
+
+Job submission form is only accessible Friday–Sunday
+
+Outside this window, show a disabled message
+
+All submissions default to pending status
+
+🛂 ADMIN & MODERATOR SYSTEM
+
+Admins can:
+
+Approve / reject job posts
+
+Manage users
+
+Manage alumni sets
+
+Create/edit blog posts
+
+Create/edit events
+
+Post announcements
+
+Admin-only routes must be protected by role-based authorization.
+
+🗄️ DATABASE SCHEMA
+Users
+
+id
+
+name
+
+email
+
+password (hashed)
+
+role (user/admin)
+
+set_id
+
+profile_image
+
+bio
+
+job_title
+
+company
+
+country
+
+created_at
+
+Sets
+
+id
+
+name (Class of 2019)
+
+year
+
+Job Posts
+
+id
+
+user_id
+
+title
+
+description
+
+company
+
+location
+
+apply_link
+
+image_url
+
+status (pending/approved/rejected)
+
+created_at
+
+Blog Posts
+
+id
+
+title
+
+body
+
+image_url
+
+status (draft/published)
+
+created_at
+
+Events
+
+id
+
+title
+
+description
+
+date
+
+venue
+
+image_url
+
+🔐 SECURITY REQUIREMENTS
+
+Password hashing with bcrypt
+
+JWT expiration
+
+Protected backend routes with middleware
+
+Role-based authorization
+
+Input validation
+
+📱 PWA REQUIREMENTS
+
+Installable on mobile
+
+Offline support for public pages
+
+Fast load times
+
+Optional push notifications for announcements/jobs
+
+🎯 EXPECTED OUTPUT
+
+Fully functional full-stack app
+
+Clean folder structure
+
+Readable, maintainable code
+
+Clear separation of concerns
+
+Production-ready MVP
+
+🧩 BONUS FEATURES (OPTIONAL)
+
+Push notifications
+
+Alumni messaging
+
+Donations (Paystack)
+
+Resume uploads
+
+Analytics dashboard
+
+🏁 BUILD IN PHASES
+
+Auth & protected routes
+
+Public landing + blog
+
+Alumni directory
+
+Job posting + moderation
+
+Admin dashboard
+
+PWA features
+
+Deployment
+
+
+
+
+
+i want to achieve this check my codebase lets go step by step

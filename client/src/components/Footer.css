@@ -1,0 +1,13 @@
+:root{ --bg:#F6FAF7; --muted:#6B7280; --text:#1F2937 }
+.fgc-footer{ background:var(--bg); border-top:1px solid #E5E7EB; padding:28px 16px 18px; margin-top:36px }
+.footer-container{ max-width:1200px; margin:0 auto; display:flex; gap:24px; justify-content:space-between; flex-wrap:wrap }
+.fgc-footer .col{ min-width:160px }
+.fgc-footer h4, .fgc-footer h5{ margin:0 0 8px }
+.fgc-footer p, .fgc-footer ul{ margin:0; color:var(--muted) }
+.fgc-footer ul{ list-style:none; padding:0 }
+.fgc-footer a{ color:var(--text); text-decoration:none }
+.footer-bottom{ text-align:center; margin-top:16px; color:var(--muted) }
+
+@media (max-width:780px){
+  .footer-container{ flex-direction:column; gap:12px }
+}
