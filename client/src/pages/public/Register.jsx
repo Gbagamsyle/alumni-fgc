@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../../supabaseClient"; // <- Supabase client
+import { supabase } from "../../supabaseClient";
 import "./Auth.css";
 
 export default function Register(){
@@ -50,17 +50,29 @@ export default function Register(){
       // optional: create a profile row linked to the auth user id
       const userId = authData?.user?.id;
       if (userId) {
-        const { error: profileError } = await supabase
-          .from('profiles') // <- use profiles table for auth metadata
-          .insert([{ id: userId, full_name: `${firstName} ${lastName}`, email, set_id: selectedSet }]);
-        if (profileError) throw profileError;
+        try {
+          const { error: profileError } = await supabase
+            .from('profiles') // <- use profiles table for auth metadata
+            .insert([{ id: userId, full_name: `${firstName} ${lastName}`, email, set_id: selectedSet }]);
+          if (profileError) {
+            console.error('Profile insert error:', profileError);
+            // show helpful message with details if available
+            throw profileError;
+          }
+        } catch (insErr) {
+          console.error('Failed inserting profile row:', insErr);
+          throw insErr;
+        }
       }
 
       setSuccess('Registration successful — check your email to confirm, then sign in.');
       setFirstName(''); setLastName(''); setEmail(''); setPassword(''); setConfirm(''); setSelectedSet('');
       setTimeout(()=> window.location.href = '/login', 1200);
     } catch(err) {
-      setError(err?.message || 'Registration failed.');
+      console.error('Registration error:', err);
+      // Provide detailed message when available
+      const msg = err?.message || err?.error || err?.details || JSON.stringify(err) || 'Registration failed.';
+      setError(msg.substring(0, 300));
     } finally {
       setLoading(false);
     }

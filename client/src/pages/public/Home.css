@@ -29,14 +29,17 @@
   display: inline-block;
 }
 
-.btn-primary {
+.home-page .btn-primary {
   background: var(--primary);
   color: var(--text);
 }
 
-.btn-secondary {
+.home-page .btn-secondary {
   border: 1px solid var(--primary);
   color: var(--primary);
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 /* HERO */

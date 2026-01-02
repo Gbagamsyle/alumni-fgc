@@ -1,8 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/auth-context";
 import './Navbar.css';
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   return (
     <header className="fgc-navbar">
       <div className="nav-container">
@@ -18,11 +22,34 @@ const Navbar = () => {
 
         <nav className="nav-links">
           <Link to="/" className="nav-item">Home</Link>
+          {user && (
+            <>
+              <Link to="/dashboard" className="nav-item">Dashboard</Link>
+              <Link to="/alumni" className="nav-item">Alumni</Link>
+            </>
+          )}
           <Link to="/about" className="nav-item">About</Link>
           <Link to="/blog" className="nav-item">Blog</Link>
           <Link to="/events" className="nav-item">Events</Link>
-          <Link to="/login" className="nav-item nav-cta">Login</Link>
-          <Link to="/register" className="nav-item nav-cta btn-primary">Register</Link>
+
+          <div className="navbar-right">
+            {user ? (
+              <button
+                className="nav-btn"
+                onClick={async () => {
+                  await logout();
+                  navigate("/");
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link to="/login" className="nav-link">Login</Link>
+                <Link to="/register" className="nav-link">Register</Link>
+              </>
+            )}
+          </div>
         </nav>
       </div>
     </header>

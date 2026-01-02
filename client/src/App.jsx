@@ -7,6 +7,7 @@ import Register from "./pages/public/Register";
 import Dashboard from "./pages/private/Dashboard";
 import Alumni from "./pages/private/Alumni";
 import Jobs from "./pages/private/Jobs";
+import Profile from "./pages/private/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -28,7 +29,14 @@ function App() {
             </PrivateRoute>
           }
         />
-
+          <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/alumni"
           element={

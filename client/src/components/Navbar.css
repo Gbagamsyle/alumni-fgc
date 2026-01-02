@@ -1,19 +1,98 @@
 :root{ --primary: #86EE60; --text:#1F2937; --bg:#FFFFFF; --muted:#6B7280 }
-.fgc-navbar{ background:var(--bg); border-bottom:1px solid #E5E7EB; position:sticky; top:0; z-index:40 }
-.nav-container{ max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 16px; }
+header.fgc-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #eef2f7;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .brand{ display:flex; align-items:center; gap:12px }
-.brand-link{ display:flex; align-items:center; text-decoration:none; color:var(--text) }
-.brand-logo{ width:44px; height:44px; object-fit:cover; border-radius:8px }
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
 .brand-text{ line-height:1 }
-.brand-text strong{ display:block; font-size:16px }
-.brand-sub{ font-size:12px; color:var(--muted) }
+.brand-text strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+  color: #0f172a;
+}
+.brand-sub {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
 
-.nav-links{ display:flex; gap:12px; align-items:center }
-.nav-item{ color:var(--text); text-decoration:none; padding:8px 10px; border-radius:8px; font-weight:600 }
-.nav-item:hover{ background:rgba(134,238,96,0.08) }
-.nav-cta{ border:1px solid transparent }
-.nav-cta.btn-primary{ background:var(--primary); color:var(--text); padding:8px 14px }
+/* Navigation links */
+.nav-links{ display:flex; align-items:center; gap:12px; margin-left:auto }
+.nav-item{ color:#0F172A; text-decoration:none; padding:8px 10px; border-radius:8px; font-size:14px }
+.nav-item:hover{ background:#F8FAFC }
 
-@media (max-width:780px){
-  .nav-links{ display:none }
+/* Right side (login/register or logout) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Link-styled buttons for login/register */
+.nav-link {
+  color: #0f172a;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  background: #f8fafc;
+  border-color: #eef2f7;
+}
+
+/* Logout button */
+.nav-btn {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-btn:hover {
+  background: #13833f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 780px){
+  .brand-text { display: none; }
+  .nav-container { padding: 8px 12px; }
+  .nav-item, .nav-link, .nav-btn { padding: 6px 8px; font-size: 13px; }
 }

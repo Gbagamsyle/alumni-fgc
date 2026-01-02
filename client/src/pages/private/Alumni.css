@@ -1,0 +1,244 @@
+/* Alumni Page Styles */
+:root {
+  --primary-green: #86EE60;
+  --bg-off-white: #F6FAF7;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --card-bg: #FFFFFF;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.alumni-page {
+  padding: 2rem;
+  background-color: var(--bg-off-white);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+/* Header Section */
+.alumni-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.alumni-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.alumni-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Highlights Section */
+.highlights-section {
+  margin-bottom: 4rem;
+}
+
+.highlights-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--primary-green);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.highlight-card {
+  background: var(--primary-green);
+  border-radius: 12px;
+  padding: 2rem;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-tag {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Search & Filters */
+.search-filter-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  min-width: 250px;
+}
+
+.search-input:focus {
+  border-color: var(--primary-green);
+}
+
+.filter-select {
+  padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-select:focus {
+  border-color: var(--primary-green);
+}
+
+/* Alumni Grid */
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.alumni-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.alumni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary-green) 0%, #a7f58a 100%);
+  position: relative;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  object-fit: cover;
+  background-color: #eee;
+}
+
+.card-body {
+  padding: 3rem 1.5rem 1.5rem;
+  flex: 1;
+}
+
+.alumni-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.alumni-role {
+  color: var(--text-primary);
+  opacity: 0.8;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.alumni-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #E5E7EB;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.connect-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: var(--primary-green);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.connect-btn:hover {
+  filter: brightness(0.95);
+}
+
+.profile-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile-btn:hover {
+  border-color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .alumni-page {
+    padding: 1rem;
+  }
+  
+  .search-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
